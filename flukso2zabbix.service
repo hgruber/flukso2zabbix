@@ -1,0 +1,13 @@
+[Unit]
+Description=flukso gateway to zabbix
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15s
+ExecStart=/usr/bin/python /usr/local/bin/flukso2zabbix.py
+
+[Install]
+WantedBy=multi-user.target
